@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   NARRATOR.JS — Audiobook narrator for Fan Al-Dhikr
+   NARRATOR.JS — Audiobook narrator for Al-Islam Al-Muftara Alayh
    Features: section-by-section, book mode, karaoke,
    voice/speed/pitch, loop, lock screen, sleep timer
    ═══════════════════════════════════════════════════════════ */
@@ -26,7 +26,7 @@
   };
   function nrT() { return NR_T[getLang()] || NR_T.en; }
 
-  const STATE = { playing:false, paused:false, mode:'page', cardIndex:0, cards:[], tabOrder:['about','cards','adhkar'], tabIndex:0, loopCount:0, loopCurrent:0, sleepTimer:null, sleepMinutes:0, duoTimeout:null, karaokeEnabled:true, autoScroll:true, duoReading:false, speed:1, pitch:1, voiceAR:null, voiceEN:null, voiceFR:null };
+  const STATE = { playing:false, paused:false, mode:'page', cardIndex:0, cards:[], tabOrder:['about','cards','defense'], tabIndex:0, loopCount:0, loopCurrent:0, sleepTimer:null, sleepMinutes:0, duoTimeout:null, karaokeEnabled:true, autoScroll:true, duoReading:false, speed:1, pitch:1, voiceAR:null, voiceEN:null, voiceFR:null };
 
   function getLang() { return document.documentElement.lang || 'ar'; }
 
@@ -66,8 +66,8 @@
         if (t) text += t.textContent + '. '; if (d) text += d.textContent + '. '; if (v) text += v.textContent + '. '; if (a) text += a.textContent;
         cards.push({ el, text: cleanText(text), type: 'card' });
       });
-    } else if (tabName === 'adhkar') {
-      panel.querySelectorAll('.anxiety-card').forEach(el => { cards.push({ el, text: cleanText(el.textContent), type: 'adhkar' }); });
+    } else if (tabName === 'defense') {
+      panel.querySelectorAll('.anxiety-card').forEach(el => { cards.push({ el, text: cleanText(el.textContent), type: 'defense' }); });
     } else if (tabName === 'habits') {
       panel.querySelectorAll('.habit-item').forEach(el => { cards.push({ el, text: cleanText(el.textContent), type: 'habit' }); });
     } else if (tabName === 'home') {
@@ -128,7 +128,7 @@
     const duoVoice = getVoiceForLang('fr'); let duoText = '';
     const cId = card.el ? card.el.id : ''; const m = cId.match(/card-(\d+)/);
     if (m && typeof CARDS !== 'undefined') { const c = CARDS[parseInt(m[1]) - 1]; if (c && c.fr) duoText = c.fr.title + '. ' + c.fr.desc; }
-    if (!duoText && card.type === 'adhkar' && typeof ADHKAR_DATA !== 'undefined') { const ac = Array.from(card.el.parentNode.querySelectorAll('.anxiety-card')); const idx = ac.indexOf(card.el); if (idx >= 0 && ADHKAR_DATA[idx] && ADHKAR_DATA[idx].fr) { const a = ADHKAR_DATA[idx].fr; duoText = (a.title||'') + '. ' + (a.problem||'') + '. ' + (a.solution||''); } }
+    if (!duoText && card.type === 'adhkar' && typeof DEFENSE_DATA !== 'undefined') { const ac = Array.from(card.el.parentNode.querySelectorAll('.anxiety-card')); const idx = ac.indexOf(card.el); if (idx >= 0 && DEFENSE_DATA[idx] && DEFENSE_DATA[idx].fr) { const a = DEFENSE_DATA[idx].fr; duoText = (a.title||'') + '. ' + (a.problem||'') + '. ' + (a.solution||''); } }
     if (!duoText) { if (onEnd) onEnd(); return; }
     let dc = false; function dd() { if (!dc) { dc = true; STATE.duoTimeout = null; if (onEnd) onEnd(); } }
     const utt = new SpeechSynthesisUtterance(cleanText(duoText)); utt.voice = duoVoice; utt.lang = 'fr-FR'; utt.rate = STATE.speed; utt.pitch = STATE.pitch; utt.onend = dd; utt.onerror = dd;
@@ -146,22 +146,22 @@
   function nextCard() { if (!STATE.playing) return; speakGen++; cancelDuo(); speechSynthesis.cancel(); clearHighlights(); STATE.loopCurrent=0; STATE.cardIndex++; if (STATE.cardIndex>=STATE.cards.length) { if (STATE.mode==='book') nextTab(); else stopNarrator(); return; } readCurrentCard(); }
   function prevCard() { if (!STATE.playing) return; speakGen++; cancelDuo(); speechSynthesis.cancel(); clearHighlights(); STATE.loopCurrent=0; STATE.cardIndex=Math.max(0,STATE.cardIndex-1); readCurrentCard(); }
   function setSleepTimer(m) { if (STATE.sleepTimer) clearTimeout(STATE.sleepTimer); STATE.sleepMinutes=m; if (m>0) STATE.sleepTimer=setTimeout(()=>{ stopNarrator(); showToast(nrT().sleepDone); },m*60000); }
-  function setupMediaSession() { if (!('mediaSession' in navigator)) return; const l=getLang(); navigator.mediaSession.metadata=new MediaMetadata({ title:l==='ar'?'فن الذكر والدعاء':l==='fr'?'L\'Art du Dhikr':'The Art of Dhikr', artist:l==='ar'?'الشيخ محمد الغزالي':'Sheikh Mohammed al-Ghazali' }); navigator.mediaSession.playbackState='playing'; navigator.mediaSession.setActionHandler('play',pauseNarrator); navigator.mediaSession.setActionHandler('pause',pauseNarrator); navigator.mediaSession.setActionHandler('nexttrack',nextCard); navigator.mediaSession.setActionHandler('previoustrack',prevCard); navigator.mediaSession.setActionHandler('stop',stopNarrator); }
+  function setupMediaSession() { if (!('mediaSession' in navigator)) return; const l=getLang(); navigator.mediaSession.metadata=new MediaMetadata({ title:l==='ar'?'الإسلام المفترى عليه':l==='fr'?'L\'Islam Faussement Accus\u00e9':'Islam Falsely Accused', artist:l==='ar'?'الشيخ محمد الغزالي':'Sheikh Mohammed al-Ghazali' }); navigator.mediaSession.playbackState='playing'; navigator.mediaSession.setActionHandler('play',pauseNarrator); navigator.mediaSession.setActionHandler('pause',pauseNarrator); navigator.mediaSession.setActionHandler('nexttrack',nextCard); navigator.mediaSession.setActionHandler('previoustrack',prevCard); navigator.mediaSession.setActionHandler('stop',stopNarrator); }
   function updateProgress() { const t=STATE.cards.length,c=STATE.cardIndex+1; const el=document.getElementById('narratorProgress'); if(el) el.textContent=`${c}/${t}`; const bar=document.getElementById('narratorBar'); if(bar) bar.style.width=(c/t*100)+'%'; }
   function updateUI() { const btn=document.getElementById('narratorMainBtn'); if(btn) btn.classList.toggle('active',STATE.playing); const pb=document.getElementById('narratorPlayPause'); if(pb) pb.textContent=STATE.playing&&!STATE.paused?'⏸️':'▶️'; }
   function updateLabels() { const t=nrT(); const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;}; set('narratorTitle',t.title); document.querySelectorAll('[data-nr]').forEach(el=>{const k=el.dataset.nr;if(t[k]) el.textContent=t[k];}); }
   function toggleNarratorPanel() { const p=document.getElementById('narratorPanel'); if(!p) return; p.classList.toggle('hidden'); if(!p.classList.contains('hidden')){updateLabels();populateVoiceSelect();syncCheckboxes();} if(typeof playSound==='function') playSound('click'); }
   function syncCheckboxes() { const p=document.getElementById('narratorPanel'); if(!p) return; const tg=p.querySelectorAll('.narrator-toggle input[type=checkbox]'); if(tg[0]) tg[0].checked=STATE.karaokeEnabled; if(tg[1]) tg[1].checked=STATE.autoScroll; if(tg[2]) tg[2].checked=STATE.duoReading; const se=document.getElementById('narratorSpeed'); if(se) se.value=STATE.speed; const sl=document.getElementById('narratorSpeedLabel'); if(sl) sl.textContent=STATE.speed+'x'; const pe=document.getElementById('narratorPitch'); if(pe) pe.value=STATE.pitch; const pl=document.getElementById('narratorPitchLabel'); if(pl) pl.textContent=STATE.pitch.toFixed(1); }
-  function onSpeedChange(v){STATE.speed=parseFloat(v);const l=document.getElementById('narratorSpeedLabel');if(l)l.textContent=STATE.speed+'x';localStorage.setItem('fd-narrator-speed',STATE.speed);}
-  function onPitchChange(v){STATE.pitch=parseFloat(v);const l=document.getElementById('narratorPitchLabel');if(l)l.textContent=STATE.pitch.toFixed(1);localStorage.setItem('fd-narrator-pitch',STATE.pitch);}
+  function onSpeedChange(v){STATE.speed=parseFloat(v);const l=document.getElementById('narratorSpeedLabel');if(l)l.textContent=STATE.speed+'x';localStorage.setItem('im-narrator-speed',STATE.speed);}
+  function onPitchChange(v){STATE.pitch=parseFloat(v);const l=document.getElementById('narratorPitchLabel');if(l)l.textContent=STATE.pitch.toFixed(1);localStorage.setItem('im-narrator-pitch',STATE.pitch);}
   function onLoopChange(v){STATE.loopCount=parseInt(v);}
   function onSleepChange(v){setSleepTimer(parseInt(v));if(parseInt(v)>0){if(typeof showToast==='function')showToast(nrT().sleepSet+' '+v+' '+nrT().min);}}
-  function onKaraokeToggle(c){STATE.karaokeEnabled=c;localStorage.setItem('fd-narrator-karaoke',c);}
-  function onAutoScrollToggle(c){STATE.autoScroll=c;localStorage.setItem('fd-narrator-autoscroll',c);}
-  function onDuoToggle(c){STATE.duoReading=c;localStorage.setItem('fd-narrator-duo',c);}
+  function onKaraokeToggle(c){STATE.karaokeEnabled=c;localStorage.setItem('im-narrator-karaoke',c);}
+  function onAutoScrollToggle(c){STATE.autoScroll=c;localStorage.setItem('im-narrator-autoscroll',c);}
+  function onDuoToggle(c){STATE.duoReading=c;localStorage.setItem('im-narrator-duo',c);}
   function populateVoiceSelect(){const s=document.getElementById('narratorVoice');if(!s)return;const voices=speechSynthesis.getVoices();const l=getLang();const lc=l==='ar'?'ar':l==='fr'?'fr':'en';s.innerHTML='';const f=[];voices.forEach((v,i)=>{if(v.lang.startsWith(lc))f.push({voice:v,idx:i});});if(!f.length)voices.forEach((v,i)=>f.push({voice:v,idx:i}));const cv=getVoiceForLang(l);f.forEach(item=>{const o=document.createElement('option');o.value=item.idx;o.textContent=`${item.voice.name} (${item.voice.lang})`;if(cv&&item.voice.name===cv.name)o.selected=true;s.appendChild(o);});}
   function onVoiceChange(v){const voices=speechSynthesis.getVoices();const voice=voices[parseInt(v)];if(!voice)return;const l=getLang();if(l==='ar')STATE.voiceAR=voice;else if(l==='fr')STATE.voiceFR=voice;else STATE.voiceEN=voice;}
-  function loadSettings(){STATE.speed=parseFloat(localStorage.getItem('fd-narrator-speed'))||1;STATE.pitch=parseFloat(localStorage.getItem('fd-narrator-pitch'))||1;STATE.karaokeEnabled=localStorage.getItem('fd-narrator-karaoke')!=='false';STATE.autoScroll=localStorage.getItem('fd-narrator-autoscroll')!=='false';STATE.duoReading=localStorage.getItem('fd-narrator-duo')==='true';}
+  function loadSettings(){STATE.speed=parseFloat(localStorage.getItem('im-narrator-speed'))||1;STATE.pitch=parseFloat(localStorage.getItem('im-narrator-pitch'))||1;STATE.karaokeEnabled=localStorage.getItem('im-narrator-karaoke')!=='false';STATE.autoScroll=localStorage.getItem('im-narrator-autoscroll')!=='false';STATE.duoReading=localStorage.getItem('im-narrator-duo')==='true';}
 
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){var p=document.getElementById('narratorPanel');if(p&&!p.classList.contains('hidden')){p.classList.add('hidden');e.stopPropagation();}}});
   window.addEventListener('beforeunload',function(){speechSynthesis.cancel();});
@@ -174,7 +174,7 @@
 
   var origRenderAbout=window.renderAbout;if(origRenderAbout){window.renderAbout=function(){origRenderAbout();setTimeout(injectSpeakButtons,100);};}
   var origRenderCards=window.renderCards;if(origRenderCards){window.renderCards=function(){origRenderCards();setTimeout(injectSpeakButtons,100);};}
-  var origRenderAdhkar=window.renderAdhkar;if(origRenderAdhkar){window.renderAdhkar=function(){origRenderAdhkar();setTimeout(injectSpeakButtons,100);};}
+  var origRenderAdhkar=window.renderDefense;if(origRenderAdhkar){window.renderDefense=function(){origRenderAdhkar();setTimeout(injectSpeakButtons,100);};}
   var origRenderHabits=window.renderHabits;if(origRenderHabits){window.renderHabits=function(){origRenderHabits();setTimeout(injectSpeakButtons,100);};}
   var origRenderHome=window.renderHome;if(origRenderHome){window.renderHome=function(){origRenderHome();setTimeout(injectSpeakButtons,100);};}
 
