@@ -240,6 +240,36 @@ const TRAITS = [
     ar:{title:'الإسلام دين تقدم',desc:'يُتهم الإسلام بمعاداة التقدم. الحقيقة أن الإسلام يأمر بإعمار الأرض والعمل والإتقان. الابتكار والتطوير مطلوبان في الإسلام. النبي قال: إذا قامت الساعة وفي يد أحدكم فسيلة فليغرسها.',verse:'هُوَ أَنْشَأَكُمْ مِنَ الْأَرْضِ وَاسْتَعْمَرَكُمْ فِيهَا',verseRef:'هود ٦١',hadith:'إذا قامت الساعة وفي يد أحدكم فسيلة فليغرسها — رواه أحمد',action:'ابدأ مشروعاً صغيراً اليوم يفيد مجتمعك — الإسلام يحب العمل والإنتاج',young:'الإسلام يحب العمل والتقدم! حتى لو كانت نهاية العالم، ازرع شجرة! 🌍'},
     en:{title:'Islam Is a Religion of Progress',desc:'Islam is accused of opposing progress. The truth is that Islam commands building the earth, working, and excelling. Innovation and development are encouraged in Islam. The Prophet said: If the Final Hour comes while you have a seedling in your hand, plant it.',verse:'He produced you from the earth and settled you in it',verseRef:'Hud 61',hadith:'If the Final Hour comes while you have a seedling in your hand, plant it — Ahmad',action:'Start a small project today that benefits your community — Islam loves work and productivity',young:'Islam loves work and progress! Even if it were the end of the world, plant a tree! 🌍'},
     fr:{title:"L'Islam Est une Religion de Progres",desc:'L\'Islam est accuse de s\'opposer au progres. La verite est que l\'Islam ordonne de batir la terre, de travailler et d\'exceller. L\'innovation et le developpement sont encourages en Islam.',verse:'Il vous a produits de la terre et vous y a etablis',verseRef:'Hud 61',hadith:'Si l\'Heure finale vient et que vous avez un plant dans la main, plantez-le — Ahmad',action:'Commencez un petit projet aujourd\'hui qui profite a votre communaute',young:'L\'Islam aime le travail et le progres ! Meme si c\'etait la fin du monde, plante un arbre ! 🌍'}
+  },
+  {
+    id:16, emoji:'⛓️',
+    ar:{title:'الإسلام والعبودية',desc:'يُتهم الإسلام بإباحة العبودية. الحقيقة أن الإسلام جاء بنظام تدريجي لتحرير العبيد. جعل تحرير الرقاب كفارة لكثير من الذنوب وحثّ على المكاتبة والعتق. الإسلام سبق العالم في الدعوة لتحرير الإنسان.',verse:'فَلَا اقْتَحَمَ الْعَقَبَةَ وَمَا أَدْرَاكَ مَا الْعَقَبَةُ فَكُّ رَقَبَةٍ',verseRef:'البلد ١١-١٣',hadith:'من أعتق رقبة مسلمة أعتق الله بكل عضو منها عضواً منه من النار — متفق عليه',action:'ابحث عن موقف الإسلام من العبودية وكيف سبق حركات التحرير بقرون',young:'الإسلام يقول: الناس أحرار! تحرير الناس من أعظم الأعمال عند الله ⛓️'},
+    en:{title:'Islam and Slavery',desc:'Islam is accused of permitting slavery. The truth is that Islam introduced a gradual system to free slaves. It made freeing slaves an atonement for many sins and encouraged manumission contracts. Islam preceded the world in calling for human liberation.',verse:'But he has not broken through the difficult pass. And what can make you know what the difficult pass is? It is the freeing of a slave',verseRef:'Al-Balad 11-13',hadith:'Whoever frees a Muslim slave, Allah will free every limb of his from the Fire — Agreed upon',action:'Research Islam\'s stance on slavery and how it preceded liberation movements by centuries',young:'Islam says: people are free! Freeing people is one of the greatest deeds before Allah ⛓️'},
+    fr:{title:"L'Islam et l'Esclavage",desc:'L\'Islam est accuse de permettre l\'esclavage. La verite est que l\'Islam a introduit un systeme progressif pour liberer les esclaves. Il a fait de l\'affranchissement une expiation pour de nombreux peches et encourage les contrats de liberation.',verse:'Mais il n\'a pas entrepris la montee difficile. Et qu\'est-ce qui te fait comprendre la montee difficile ? C\'est liberer un esclave',verseRef:'Al-Balad 11-13',hadith:'Quiconque libere un esclave musulman, Allah liberera chaque membre de son corps du Feu — Unanimement reconnu',action:'Recherchez la position de l\'Islam sur l\'esclavage et comment il a precede les mouvements de liberation de plusieurs siecles',young:'L\'Islam dit : les gens sont libres ! Liberer les gens est l\'une des plus grandes actions devant Allah ⛓️'}
+  },
+  {
+    id:17, emoji:'🌿',
+    ar:{title:'الإسلام والبيئة',desc:'يُزعم أن الإسلام لا يهتم بالبيئة. الحقيقة أن الإسلام جعل الإنسان خليفة في الأرض مسؤولاً عن إعمارها وحمايتها. النبي نهى عن الإسراف في الماء حتى في الوضوء ودعا لغرس الأشجار.',verse:'وَلَا تُفْسِدُوا فِي الْأَرْضِ بَعْدَ إِصْلَاحِهَا',verseRef:'الأعراف ٥٦',hadith:'إن قامت الساعة وفي يد أحدكم فسيلة فليغرسها — رواه أحمد',action:'ازرع شجرة أو قلل من استهلاكك للماء والكهرباء اليوم',young:'الإسلام يحب الطبيعة! لا تلوث البيئة وازرع الأشجار — هذا من الإيمان 🌿'},
+    en:{title:'Islam and the Environment',desc:'Some claim Islam does not care about the environment. The truth is that Islam made humans stewards of the earth, responsible for building and protecting it. The Prophet forbade wasting water even during ablution and called for planting trees.',verse:'And do not cause corruption on the earth after its reformation',verseRef:'Al-A\'raf 56',hadith:'If the Hour comes while you have a seedling in your hand, plant it — Ahmad',action:'Plant a tree or reduce your water and electricity consumption today',young:'Islam loves nature! Do not pollute the environment and plant trees — this is part of faith 🌿'},
+    fr:{title:"L'Islam et l'Environnement",desc:'Certains pretendent que l\'Islam ne se soucie pas de l\'environnement. La verite est que l\'Islam a fait de l\'humain un intendant de la terre, responsable de la batir et de la proteger. Le Prophete a interdit le gaspillage d\'eau meme pendant les ablutions.',verse:'Et ne semez pas la corruption sur terre apres sa reforme',verseRef:'Al-A\'raf 56',hadith:'Si l\'Heure arrive et que vous avez un plant dans la main, plantez-le — Ahmad',action:'Plantez un arbre ou reduisez votre consommation d\'eau et d\'electricite aujourd\'hui',young:'L\'Islam aime la nature ! Ne pollue pas l\'environnement et plante des arbres — c\'est un acte de foi 🌿'}
+  },
+  {
+    id:18, emoji:'🎵',
+    ar:{title:'الإسلام والموسيقى والفنون',desc:'يُقال إن الإسلام يحرم كل أنواع الموسيقى والفنون. الحقيقة أن هناك خلافاً فقهياً واسعاً في المسألة. الإسلام يرحب بالإنشاد والشعر والفنون الراقية. النبي استمع للإنشاد ولم ينهَ عنه.',verse:'وَمِنَ النَّاسِ مَنْ يَشْتَرِي لَهْوَ الْحَدِيثِ',verseRef:'لقمان ٦',hadith:'إن الله جميل يحب الجمال — رواه مسلم',action:'استمع لنشيد إسلامي جميل أو اقرأ قصيدة عربية وتأمل جمالها',young:'المسلمون يحبون الجمال! الأناشيد والشعر والفن الراقي جزء من حضارتنا 🎵'},
+    en:{title:'Islam and Music and Arts',desc:'Some say Islam forbids all forms of music and art. The truth is that there is a wide juristic disagreement on the matter. Islam welcomes nasheed, poetry, and refined arts. The Prophet listened to nasheed and did not forbid it.',verse:'And of the people is he who buys the amusement of speech',verseRef:'Luqman 6',hadith:'Indeed, Allah is beautiful and loves beauty — Muslim',action:'Listen to a beautiful Islamic nasheed or read an Arabic poem and contemplate its beauty',young:'Muslims love beauty! Nasheeds, poetry, and refined art are part of our civilization 🎵'},
+    fr:{title:"L'Islam et la Musique et les Arts",desc:'Certains disent que l\'Islam interdit toutes les formes de musique et d\'art. La verite est qu\'il y a un large desaccord juridique sur la question. L\'Islam accueille le nasheed, la poesie et les arts raffines. Le Prophete a ecoute le nasheed et ne l\'a pas interdit.',verse:'Et parmi les gens, il y a celui qui achete le divertissement de la parole',verseRef:'Luqman 6',hadith:'Certes, Allah est beau et aime la beaute — Muslim',action:'Ecoutez un beau nasheed islamique ou lisez un poeme arabe et contemplez sa beaute',young:'Les musulmans aiment la beaute ! Les nasheeds, la poesie et l\'art raffine font partie de notre civilisation 🎵'}
+  },
+  {
+    id:19, emoji:'📺',
+    ar:{title:'صناعة الإسلاموفوبيا',desc:'الإسلاموفوبيا ليست خوفاً عفوياً بل صناعة ممنهجة تموّلها مؤسسات لتشويه صورة الإسلام. شبكات إعلامية ومراكز أبحاث تنفق ملايين الدولارات سنوياً لنشر الكراهية ضد المسلمين. الرد يكون بالعلم والحوار والقدوة الحسنة.',verse:'يُرِيدُونَ أَنْ يُطْفِئُوا نُورَ اللَّهِ بِأَفْوَاهِهِمْ وَيَأْبَى اللَّهُ إِلَّا أَنْ يُتِمَّ نُورَهُ',verseRef:'التوبة ٣٢',hadith:'إن الله ليؤيد هذا الدين بالرجل الفاجر — متفق عليه',action:'تعرف على حقيقة صناعة الإسلاموفوبيا وشارك المعلومات مع محيطك',young:'لا تحزن إذا أحد أساء للإسلام — كن قدوة حسنة وأجب بالعلم والأدب 📺'},
+    en:{title:'The Islamophobia Industry',desc:'Islamophobia is not a spontaneous fear but a systematic industry funded by organizations to distort Islam\'s image. Media networks and think tanks spend millions annually to spread hatred against Muslims. The response should be through knowledge, dialogue, and good example.',verse:'They want to extinguish the light of Allah with their mouths, but Allah refuses except to perfect His light',verseRef:'At-Tawbah 32',hadith:'Indeed Allah supports this religion even through a sinful person — Agreed upon',action:'Learn about the reality of the Islamophobia industry and share information with those around you',young:'Do not be sad if someone insults Islam — be a good example and respond with knowledge and manners 📺'},
+    fr:{title:"L'Industrie de l'Islamophobie",desc:'L\'islamophobie n\'est pas une peur spontanee mais une industrie systematique financee par des organisations pour deformer l\'image de l\'Islam. Des reseaux mediatiques et des centres de recherche depensent des millions annuellement pour repandre la haine contre les musulmans.',verse:'Ils veulent eteindre la lumiere d\'Allah avec leurs bouches, mais Allah refuse sinon de parfaire Sa lumiere',verseRef:'At-Tawbah 32',hadith:'Certes Allah soutient cette religion meme par un homme pecheur — Unanimement reconnu',action:'Decouvrez la realite de l\'industrie de l\'islamophobie et partagez les informations avec votre entourage',young:'Ne sois pas triste si quelqu\'un insulte l\'Islam — sois un bon exemple et reponds avec savoir et politesse 📺'}
+  },
+  {
+    id:20, emoji:'📰',
+    ar:{title:'التحيز الإعلامي',desc:'وسائل الإعلام الغربية غالباً ما تقدم صورة مشوهة عن الإسلام. تركز على الأحداث السلبية وتتجاهل الإيجابيات. المسلم العادي لا يظهر في الأخبار لكن المتطرف يحتل العناوين. نحتاج إعلاماً إسلامياً محترفاً يقدم الحقيقة.',verse:'وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَى أَلَّا تَعْدِلُوا اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَى',verseRef:'المائدة ٨',hadith:'بلغوا عني ولو آية — رواه البخاري',action:'شارك قصة إيجابية عن الإسلام أو المسلمين مع شخص غير مسلم',young:'لا تصدق كل ما تراه في الأخبار! ابحث بنفسك عن الحقيقة وكن منصفاً 📰'},
+    en:{title:'Media Bias',desc:'Western media often presents a distorted image of Islam. It focuses on negative events and ignores the positives. The average Muslim does not appear in the news, but an extremist makes headlines. We need professional Islamic media that presents the truth.',verse:'And do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness',verseRef:'Al-Maidah 8',hadith:'Convey from me even if it is one verse — Bukhari',action:'Share a positive story about Islam or Muslims with a non-Muslim',young:'Do not believe everything you see in the news! Search for the truth yourself and be fair 📰'},
+    fr:{title:'Le Biais Mediatique',desc:'Les medias occidentaux presentent souvent une image deformee de l\'Islam. Ils se concentrent sur les evenements negatifs et ignorent les positifs. Le musulman ordinaire n\'apparait pas dans les nouvelles mais l\'extremiste fait les gros titres.',verse:'Et que la haine d\'un peuple ne vous incite pas a etre injustes. Soyez justes : c\'est plus proche de la piete',verseRef:'Al-Maidah 8',hadith:'Transmettez de moi, ne serait-ce qu\'un verset — Bukhari',action:'Partagez une histoire positive sur l\'Islam ou les musulmans avec un non-musulman',young:'Ne crois pas tout ce que tu vois dans les nouvelles ! Cherche la verite toi-meme et sois juste 📰'}
   }
 ];
 
@@ -294,6 +324,38 @@ const QUIZ = [
     ar:{q:'أي خليفة أوقف حد السرقة في عام المجاعة؟',opts:['أبو بكر','عمر بن الخطاب','عثمان','علي'],correct:1,hint:'ثاني الخلفاء الراشدين',quran:'الشورى ٣٩'},
     en:{q:'Which caliph suspended the punishment for theft during famine?',opts:['Abu Bakr','Umar ibn al-Khattab','Uthman','Ali'],correct:1,hint:'The second of the Rightly Guided Caliphs',quran:'Ash-Shura 39'},
     fr:{q:'Quel calife a suspendu la peine pour vol durant la famine ?',opts:['Abu Bakr','Umar ibn al-Khattab','Uthman','Ali'],correct:1,hint:'Le deuxieme des Califes Bien Guides',quran:'Ash-Shura 39'}
+  },
+  {
+    ar:{q:'ما موقف الإسلام من العبودية؟',opts:['أباحها مطلقاً','جاء بنظام تدريجي لتحريرها','لم يتطرق إليها','حرمها فوراً'],correct:1,hint:'الإسلام جعل تحرير الرقاب كفارة للذنوب',quran:'البلد ١٣'},
+    en:{q:'What is Islam\'s position on slavery?',opts:['Fully permitted it','Introduced a gradual system for its abolition','Did not address it','Banned it immediately'],correct:1,hint:'Islam made freeing slaves an atonement for sins',quran:'Al-Balad 13'},
+    fr:{q:'Quelle est la position de l\'Islam sur l\'esclavage ?',opts:['L\'a pleinement permis','A introduit un systeme progressif pour son abolition','Ne l\'a pas aborde','L\'a interdit immediatement'],correct:1,hint:'L\'Islam a fait de l\'affranchissement une expiation pour les peches',quran:'Al-Balad 13'}
+  },
+  {
+    ar:{q:'أكمل الآية: "وَلَا تُفْسِدُوا فِي الْأَرْضِ بَعْدَ ..."',opts:['خلقها','إصلاحها','تعميرها','بنائها'],correct:1,hint:'تتعلق بحماية البيئة في الإسلام',quran:'الأعراف ٥٦'},
+    en:{q:'Complete the verse: "And do not cause corruption on earth after its..."',opts:['Creation','Reformation','Building','Construction'],correct:1,hint:'This verse relates to environmental protection in Islam',quran:'Al-A\'raf 56'},
+    fr:{q:'Completez le verset : « Et ne semez pas la corruption sur terre apres sa... »',opts:['Creation','Reforme','Construction','Edifice'],correct:1,hint:'Ce verset concerne la protection de l\'environnement en Islam',quran:'Al-A\'raf 56'}
+  },
+  {
+    ar:{q:'ما الحديث الذي يدل على موقف الإسلام من الفنون والجمال؟',opts:['الحلال بيّن والحرام بيّن','إن الله جميل يحب الجمال','الدين النصيحة','خير الناس أنفعهم للناس'],correct:1,hint:'يرفع مكانة الجمال في الإسلام',quran:'النمل ٨٨'},
+    en:{q:'Which hadith indicates Islam\'s position on art and beauty?',opts:['The halal is clear and the haram is clear','Indeed, Allah is beautiful and loves beauty','Religion is sincere advice','The best people are those most beneficial to others'],correct:1,hint:'It elevates the status of beauty in Islam',quran:'An-Naml 88'},
+    fr:{q:'Quel hadith indique la position de l\'Islam sur l\'art et la beaute ?',opts:['Le halal est clair et le haram est clair','Certes, Allah est beau et aime la beaute','La religion c\'est le bon conseil','Les meilleurs sont les plus utiles aux autres'],correct:1,hint:'Il eleve le statut de la beaute en Islam',quran:'An-Naml 88'}
+  },
+  {
+    ar:{q:'ما الآية التي تؤكد مسؤولية الإنسان عن حماية البيئة؟',
+      opts:['البقرة ٣٠','الأعراف ٥٦','النحل ١٢٥','الحجرات ١٣'],
+      correct:1,
+      hint:'تنهى عن الإفساد في الأرض بعد إصلاحها',
+      quran:'الأعراف ٥٦'},
+    en:{q:'Which verse affirms humanity\'s responsibility for environmental protection?',
+      opts:['Al-Baqarah 30','Al-A\'raf 56','An-Nahl 125','Al-Hujurat 13'],
+      correct:1,
+      hint:'It forbids causing corruption on earth after its reformation',
+      quran:'Al-A\'raf 56'},
+    fr:{q:'Quel verset affirme la responsabilite de l\'humanite pour la protection de l\'environnement ?',
+      opts:['Al-Baqarah 30','Al-A\'raf 56','An-Nahl 125','Al-Hujurat 13'],
+      correct:1,
+      hint:'Il interdit de semer la corruption sur terre apres sa reforme',
+      quran:'Al-A\'raf 56'}
   }
 ];
 
@@ -313,7 +375,13 @@ const DUAS = [
     fr:{label:'Dua pour la Fermete',text:'رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا',tr:'Notre Seigneur, deverse sur nous la patience et affermis nos pas — Al-Baqarah 250'} },
   { ar:{label:'دعاء التوكل',text:'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ',tr:'التوبة ١٢٩'},
     en:{label:'Dua of Trust',text:'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ',tr:'Allah is sufficient for me; there is no god except Him. I rely on Him — At-Tawbah 129'},
-    fr:{label:'Dua de Confiance',text:'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ',tr:'Allah me suffit ; il n\'y a de dieu que Lui — At-Tawbah 129'} }
+    fr:{label:'Dua de Confiance',text:'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ',tr:'Allah me suffit ; il n\'y a de dieu que Lui — At-Tawbah 129'} },
+  { ar:{label:'دعاء النور',text:'اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا وَفِي بَصَرِي نُورًا وَفِي سَمْعِي نُورًا',tr:'اللهم اجعل في قلبي نوراً وفي بصري نوراً وفي سمعي نوراً'},
+    en:{label:'Dua for Light',text:'اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا وَفِي بَصَرِي نُورًا وَفِي سَمْعِي نُورًا',tr:'O Allah, place light in my heart, light in my sight, and light in my hearing'},
+    fr:{label:'Dua pour la Lumiere',text:'اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا وَفِي بَصَرِي نُورًا وَفِي سَمْعِي نُورًا',tr:'O Allah, place de la lumiere dans mon coeur, de la lumiere dans ma vue et de la lumiere dans mon ouie'} },
+  { ar:{label:'دعاء الحق',text:'رَبَّنَا أَرِنَا الْحَقَّ حَقًّا وَارْزُقْنَا اتِّبَاعَهُ وَأَرِنَا الْبَاطِلَ بَاطِلًا وَارْزُقْنَا اجْتِنَابَهُ',tr:'ربنا أرنا الحق حقاً وارزقنا اتباعه وأرنا الباطل باطلاً وارزقنا اجتنابه'},
+    en:{label:'Dua for Truth',text:'رَبَّنَا أَرِنَا الْحَقَّ حَقًّا وَارْزُقْنَا اتِّبَاعَهُ وَأَرِنَا الْبَاطِلَ بَاطِلًا وَارْزُقْنَا اجْتِنَابَهُ',tr:'Our Lord, show us the truth as truth and grant us to follow it, and show us falsehood as falsehood and grant us to avoid it'},
+    fr:{label:'Dua pour la Verite',text:'رَبَّنَا أَرِنَا الْحَقَّ حَقًّا وَارْزُقْنَا اتِّبَاعَهُ وَأَرِنَا الْبَاطِلَ بَاطِلًا وَارْزُقْنَا اجْتِنَابَهُ',tr:'Notre Seigneur, montre-nous la verite comme verite et accorde-nous de la suivre, et montre-nous le faux comme faux et accorde-nous de l\'eviter'} }
 ];
 
 // ═══════════════ XP / BADGE SYSTEM ═══════════════
