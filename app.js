@@ -480,30 +480,30 @@ function cycleTheme() {
   const idx = (THEMES.indexOf(currentTheme) + 1) % THEMES.length;
   currentTheme = THEMES[idx];
   document.documentElement.dataset.theme = currentTheme;
-  document.getElementById('themeIcon').textContent = THEME_ICONS[currentTheme];
+  { const _e=document.getElementById('themeIcon'); if(_e) _e.textContent=THEME_ICONS[currentTheme]; }
   playSound('theme');
 }
 
 // ═══════════════ RENDER ALL ═══════════════
 function renderAll() {
   const t = T[lang];
-  document.getElementById('appTitle').textContent = t.appTitle;
-  document.getElementById('splashSub').textContent = t.splashSub;
-  document.getElementById('splashHint').textContent = t.splashHint;
-  document.getElementById('tabHome').textContent = t.tabHome;
-  document.getElementById('tabTraits').textContent = t.tabTraits;
-  document.getElementById('tabQuiz').textContent = t.tabQuiz;
-  document.getElementById('tabProgress').textContent = t.tabProgress;
-  document.getElementById('tabAbout').textContent = t.tabAbout;
-  document.getElementById('traitsTitle').textContent = t.traitsTitle;
-  document.getElementById('traitsDesc').textContent = t.traitsDesc;
-  document.getElementById('quizTitle').textContent = t.quizTitle;
-  document.getElementById('quizDesc').textContent = t.quizDesc;
-  document.getElementById('progressTitle').textContent = t.progressTitle;
-  document.getElementById('progressDesc').textContent = t.progressDesc;
-  document.getElementById('helpTitle').textContent = t.helpTitle;
-  document.getElementById('duaPanelTitle').textContent = t.duaPanelTitle;
-  document.getElementById('ageModeBtn').textContent = ageMode === 'young' ? t.youngMode : t.teenMode;
+  { const _e=document.getElementById('appTitle'); if(_e) _e.textContent=t.appTitle; }
+  { const _e=document.getElementById('splashSub'); if(_e) _e.textContent=t.splashSub; }
+  { const _e=document.getElementById('splashHint'); if(_e) _e.textContent=t.splashHint; }
+  { const _e=document.getElementById('tabHome'); if(_e) _e.textContent=t.tabHome; }
+  { const _e=document.getElementById('tabTraits'); if(_e) _e.textContent=t.tabTraits; }
+  { const _e=document.getElementById('tabQuiz'); if(_e) _e.textContent=t.tabQuiz; }
+  { const _e=document.getElementById('tabProgress'); if(_e) _e.textContent=t.tabProgress; }
+  { const _e=document.getElementById('tabAbout'); if(_e) _e.textContent=t.tabAbout; }
+  { const _e=document.getElementById('traitsTitle'); if(_e) _e.textContent=t.traitsTitle; }
+  { const _e=document.getElementById('traitsDesc'); if(_e) _e.textContent=t.traitsDesc; }
+  { const _e=document.getElementById('quizTitle'); if(_e) _e.textContent=t.quizTitle; }
+  { const _e=document.getElementById('quizDesc'); if(_e) _e.textContent=t.quizDesc; }
+  { const _e=document.getElementById('progressTitle'); if(_e) _e.textContent=t.progressTitle; }
+  { const _e=document.getElementById('progressDesc'); if(_e) _e.textContent=t.progressDesc; }
+  { const _e=document.getElementById('helpTitle'); if(_e) _e.textContent=t.helpTitle; }
+  { const _e=document.getElementById('duaPanelTitle'); if(_e) _e.textContent=t.duaPanelTitle; }
+  { const _e=document.getElementById('ageModeBtn'); if(_e) _e.textContent=ageMode === 'young' ? t.youngMode : t.teenMode; }
   renderHome();
   renderTraits();
   renderProgress();
@@ -519,12 +519,12 @@ function renderHome() {
   const dayIdx = new Date().getDate() % TRAITS.length;
   const trait = TRAITS[dayIdx];
   const d = trait[lang];
-  document.getElementById('dailyCard').innerHTML = `
+  (document.getElementById('dailyCard')||{}).innerHTML= `
     <div class="daily-label">${t.dailyLabel}</div>
     <div class="daily-title">${trait.emoji} ${d.title}</div>
     <div class="daily-body">${ageMode === 'young' ? d.young : d.desc}</div>
     <div class="daily-action" onclick="switchTab('traits');toggleCard('trait-${trait.id}')">${t.readMore} &#8594;</div>`;
-  document.getElementById('homeGrid').innerHTML = TRAITS.map(tr => {
+  (document.getElementById('homeGrid')||{}).innerHTML= TRAITS.map(tr => {
     const dd = tr[lang];
     return `<div class="home-card" onclick="switchTab('traits');toggleCard('trait-${tr.id}')">
       <span class="hc-icon">${tr.emoji}</span>
@@ -693,7 +693,7 @@ function showQuizResult() {
   if (pct >= 80) { emoji = '🏆'; title = lang==='ar'?'مدافع حقيقي!':lang==='fr'?'Un vrai defenseur !':'A True Defender!'; }
   else if (pct >= 50) { emoji = '📖'; title = lang==='ar'?'جيد جداً!':lang==='fr'?'Tres bien !':'Very Good!'; }
   else { emoji = '🌱'; title = lang==='ar'?'واصل التعلم!':lang==='fr'?'Continue d\'apprendre !':'Keep Learning!'; }
-  document.getElementById('quizContainer').innerHTML = '';
+  (document.getElementById('quizContainer')||{}).innerHTML= '';
   const result = document.getElementById('quizResult');
   result.classList.remove('hidden');
   result.innerHTML = `
@@ -720,7 +720,7 @@ function renderProgress() {
   const nextXP = nextBadge ? nextBadge.xp : 1000;
   const progressPct = Math.min(100, (xp / nextXP) * 100);
 
-  document.getElementById('progressContainer').innerHTML = `
+  (document.getElementById('progressContainer')||{}).innerHTML= `
     <div class="progress-xp-card">
       <div class="xp-header"><span class="xp-icon">⭐</span><span class="xp-amount">${xp} ${t.xpLabel}</span></div>
       <div class="xp-bar-wrap">
@@ -789,7 +789,7 @@ function renderAbout() {
     }
   };
   const a = about[lang];
-  document.getElementById('aboutContainer').innerHTML = `
+  (document.getElementById('aboutContainer')||{}).innerHTML= `
     <div class="about-disclaimer"><div class="about-disclaimer-title">${a.disclaimerTitle}</div><p>${a.disclaimer}</p></div>
     <div class="about-author"><span class="about-author-icon">📚</span><div class="about-author-info"><div class="about-author-name">${a.authorName}</div><div class="about-author-dates">${a.authorDates}</div><div class="about-author-bio">${a.authorBio}</div></div></div>
     <div class="about-section"><div class="about-section-title">${a.bookTitle}</div><p class="about-text">${a.bookDesc}</p></div>
@@ -825,13 +825,13 @@ function renderHelp() {
       {title:'🤝 Contribuer',body:'GitHub : github.com/abourdim/al-islam-al-muftara-alayh'},
     ]
   };
-  document.getElementById('helpBody').innerHTML = help[lang].map(h => `
+  (document.getElementById('helpBody')||{}).innerHTML= help[lang].map(h => `
     <div class="help-item"><div class="help-item-title">${h.title}</div><div>${h.body}</div></div>`).join('');
 }
 
 // ═══════════════ RENDER: DUAS ═══════════════
 function renderDuas() {
-  document.getElementById('duaPanelContent').innerHTML = DUAS.map(d => {
+  (document.getElementById('duaPanelContent')||{}).innerHTML= DUAS.map(d => {
     const dd = d[lang];
     return `<div class="dua-item"><div class="dua-item-label">${dd.label}</div><div class="dua-item-ar">${dd.text}</div><div class="dua-item-tr">${dd.tr}</div></div>`;
   }).join('');
@@ -878,6 +878,10 @@ function switchTab(name) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   playSound('click');
   setTimeout(() => { document.querySelectorAll('.scroll-reveal:not(.revealed)').forEach(el => { if (window._scrollObserver) window._scrollObserver.observe(el); }); initTypewriter(); }, 100);
+  // Auto-render quiz when switching to quiz tab
+  if (name === 'quiz' && document.getElementById('quizContainer') && !document.getElementById('quizContainer').innerHTML.trim()) {
+    renderQuiz();
+  }
 }
 
 // ═══════════════ SCROLL REVEAL ═══════════════
